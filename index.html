@@ -1,134 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Favorite Person</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #ffe4e1;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
-
-        h1 {
-            color: #d63384;
-            font-size: 2.5rem;
-        }
-
-        p {
-            color: #555;
-            font-size: 1.2rem;
-        }
-
-        .buttons {
-            margin-top: 20px;
-        }
-
-        button {
-            padding: 10px 25px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #yesBtn {
-            background-color: #ff4d6d;
-            color: white;
-            margin-right: 10px;
-        }
-
-        #noBtn {
-            background-color: #adb5bd;
-            color: white;
-            position: absolute;
-        }
-
-        /* Floating Hearts Animation */
-        .heart {
-            position: absolute;
-            color: #ff4d6d;
-            font-size: 20px;
-            animation: float 4s linear infinite;
-            opacity: 0;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For You, Always ♡</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <div class="container">
-        <h1 id="question">Do you love me as much as I love you? ❤️</h1>
-        <p id="message">I made this just to remind you how special you are.</p>
-        
-        <div class="buttons">
-            <button id="yesBtn">Yes!</button>
-            <button id="noBtn">No</button>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="scene">
+    <div class="topline"><span>JUST BETWEEN US</span><span>♡</span></div>
+    <section id="intro" class="panel active">
+      <p class="eyebrow">A little something I couldn't say out loud</p>
+      <h1>For the girl<br/><em>who feels like home.</em></h1>
+      <p class="intro-copy">Some things are easier to write than to say.<br/>So I made you a little place for my words.</p>
+      <button id="openLetter" class="primary">Open your letter <span>♡</span></button>
+      <p class="tiny">take your time · there is no rush</p>
+      <div class="music-card">
+        <p class="music-kicker">A song for you</p>
+        <h2 class="music-title">تملي معاك <span>♡</span></h2>
+        <p class="music-subtitle">Amr Diab · Tamally Maak</p>
+        <button id="playSong" class="music-button" type="button">▶ Play our song</button>
+        <div id="songPlayer" class="song-player" hidden>
+          <iframe id="songFrame" title="Amr Diab - Tamally Maak official music video" src="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-    </div>
-
-    <script>
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        const question = document.getElementById('question');
-        const message = document.getElementById('message');
-
-        // Make the "No" button run away
-        noBtn.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-        });
-
-        // When "Yes" is clicked
-        yesBtn.addEventListener('click', () => {
-            question.innerText = "I knew it! 🥰";
-            message.innerHTML = "You're my favorite person in the world.<br>You did a great job!❤️<br>I am so proud of you<br>You're my wish baby<br>I love you like the stars love the night sky!";
-            noBtn.style.display = 'none';
-            
-            // Create a burst of hearts
-            for(let i=0; i<30; i++) {
-                createHeart();
-            }
-        });
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            document.body.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-
-        // Periodically spawn background hearts
-        setInterval(createHeart, 500);
-    </script>
+        <a class="music-link" href="https://www.youtube.com/watch?v=EgmXTmj62ic" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+      </div>
+      <div class="music-card second-song">
+        <p class="music-kicker">The song I used to sing to you</p>
+        <h2 class="music-title">Can’t Help Falling in Love <span>♡</span></h2>
+        <p class="music-subtitle">Elvis Presley · a little piece of our story</p>
+        <p class="song-memory">I still think of singing this one to you. Some songs become memories, and this one will always remind me of you.</p>
+        <button id="playElvis" class="music-button" type="button">▶ Play our song</button>
+        <div id="elvisPlayer" class="song-player" hidden>
+          <iframe id="elvisFrame" title="Elvis Presley - Can't Help Falling in Love official lyric video" src="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <a class="music-link" href="https://www.youtube.com/watch?v=O-aavAlSYgc" target="_blank" rel="noopener noreferrer">Watch the official Elvis lyric video ↗</a>
+      </div>
+    </section>
+    <section id="letter" class="panel letter" aria-live="polite">
+      <p class="eyebrow">Scene 01 · A confession</p>
+      <h2>I don't know what to do…</h2>
+      <p class="letter-text">Sometimes I wish I knew the perfect words, or the perfect thing to do, or some grand gesture that could explain what you mean to me.</p>
+      <p class="letter-text">But I don't. I only know that <strong>I will love you like no one does.</strong> Not because I have everything figured out, but because loving you is one thing my heart seems certain about.</p>
+      <button class="next" data-next="quotes">Continue <span>↓</span></button>
+    </section>
+    <section id="quotes" class="panel quotes">
+      <p class="eyebrow">Scene 02 · Things movies almost say for me</p>
+      <div class="quote-card"><blockquote>“You complete me.”</blockquote><cite>— <i>Jerry Maguire</i></cite></div>
+      <div class="quote-card"><blockquote>“I’m in love with you.”</blockquote><cite>— <i>The Notebook</i></cite></div>
+      <div class="quote-card"><blockquote>“To me, you are perfect.”</blockquote><cite>— <i>Love Actually</i></cite></div>
+      <p class="quote-after">They say it in movies. I wish I could make you feel it in real life.</p>
+      <button class="next" data-next="promise">One more thing <span>↓</span></button>
+    </section>
+    <section id="promise" class="panel promise">
+      <p class="eyebrow">Scene 03 · My promise</p>
+      <div class="heart-wrap"><span class="heart">♥</span></div>
+      <h2>Not a perfect love.<br/><em>A real one.</em></h2>
+      <p class="letter-text">I want to be there for the ordinary days, the messy ones, the days when you don't feel like being strong, and the days we laugh at absolutely nothing.</p>
+      <p class="letter-text">I want to keep choosing you with patience, honesty, tenderness, and all the little ways love is supposed to show up.</p>
+      <button class="next" data-next="final">Read the last part <span>↓</span></button>
+    </section>
+    <section id="final" class="panel final">
+      <p class="eyebrow">Final scene · Until the credits</p>
+      <h2>If I had one wish…</h2>
+      <p class="letter-text">It wouldn't be for a perfect story. It would be for more time with you, more memories, more little moments that become our favorite things without us even noticing.</p>
+      <p class="final-line">I don't know what to do,<br/>but I will love you <em>like no one does.</em></p>
+      <div class="signature">Always, with love <span>♡</span></div>
+      <button id="restart" class="quiet">Read it again ↺</button>
+    </section>
+    <footer>MADE OF WORDS, AND A LITTLE COURAGE <span>♡</span></footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
