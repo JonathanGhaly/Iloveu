@@ -1,77 +1,124 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b17">
+  <meta name="description" content="A little something I couldn't say out loud.">
   <title>For You, Always ♡</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 <body>
   <div class="stars" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-  <main class="scene">
-    <div class="topline"><span>JUST BETWEEN US</span><span>♡</span></div>
-    <section id="intro" class="panel active">
-      <p class="eyebrow">A little something I couldn't say out loud</p>
-      <h1>For the girl<br/><em>who feels like home.</em></h1>
-      <p class="intro-copy">Some things are easier to write than to say.<br/>So I made you a little place for my words.</p>
-      <button id="openLetter" class="primary">Open your letter <span>♡</span></button>
-      <p class="tiny">take your time · there is no rush</p>
-      <div class="music-card">
-        <p class="music-kicker">A song for you</p>
-        <h2 class="music-title">تملي معاك <span>♡</span></h2>
-        <p class="music-subtitle">Amr Diab · Tamally Maak</p>
-        <button id="playSong" class="music-button" type="button">▶ Play our song</button>
-        <div id="songPlayer" class="song-player" hidden>
-          <iframe id="songFrame" title="Amr Diab - Tamally Maak official music video" src="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <a class="music-link" href="https://www.youtube.com/watch?v=EgmXTmj62ic" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Our story home"><span class="brand-mark">✦</span><span>Our Story</span><span class="brand-heart">♡</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#quotes">Quotes</a>
+      <a href="#letter">The Letter</a>
+      <a href="#forever">Forever</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">JUST BETWEEN US <span>♡</span></p>
+        <p class="intro">A little something I couldn't say out loud</p>
+        <h1>For the girl<br><em>who feels like home.</em></h1>
+        <p class="hero-copy">Some things are easier to write than to say.<br>So I made you a little place for my words.</p>
+        <button class="primary-button" id="open-letter">Open your letter <span>♡</span></button>
+        <p class="quiet-note">take your time · there is no rush</p>
       </div>
-      <div class="music-card second-song">
-        <p class="music-kicker">The song I used to sing to you</p>
-        <h2 class="music-title">Can’t Help Falling in Love <span>♡</span></h2>
-        <p class="music-subtitle">Elvis Presley · a little piece of our story</p>
-        <p class="song-memory">I still think of singing this one to you. Some songs become memories, and this one will always remind me of you.</p>
-        <button id="playElvis" class="music-button" type="button">▶ Play our song</button>
-        <div id="elvisPlayer" class="song-player" hidden>
-          <iframe id="elvisFrame" title="Elvis Presley - Can't Help Falling in Love official lyric video" src="" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <a class="music-link" href="https://www.youtube.com/watch?v=O-aavAlSYgc" target="_blank" rel="noopener noreferrer">Watch the official Elvis lyric video ↗</a>
+      <div class="hero-caption"><span class="caption-line"></span><span>Because with you, everything feels like a movie worth watching.</span><span class="caption-heart">♥</span></div>
+      <a class="scroll-cue" href="#quotes" aria-label="Scroll to quotes">↓</a>
+    </section>
+
+    <section class="section quotes-section" id="quotes">
+      <div class="section-heading">
+        <p class="eyebrow">A FEW WORDS THAT REMIND ME OF YOU</p>
+        <h2>As if the movies <em>knew.</em></h2>
+        <p>Some stories find the words before we do.</p>
+      </div>
+      <div class="quote-grid">
+        <article class="quote-card"><span class="quote-mark">“</span><blockquote>You complete me.</blockquote><p>Jerry Maguire</p></article>
+        <article class="quote-card"><span class="quote-mark">“</span><blockquote>In case you didn't know, I'm in love with you.</blockquote><p>The Notebook</p></article>
+        <article class="quote-card"><span class="quote-mark">“</span><blockquote>Some people are worth melting for.</blockquote><p>Frozen</p></article>
+        <article class="quote-card"><span class="quote-mark">“</span><blockquote>I would rather share one lifetime with you than face all the ages of this world alone.</blockquote><p>The Lord of the Rings</p></article>
       </div>
     </section>
-    <section id="letter" class="panel letter" aria-live="polite">
-      <p class="eyebrow">Scene 01 · A confession</p>
-      <h2>I don't know what to do…</h2>
-      <p class="letter-text">Sometimes I wish I knew the perfect words, or the perfect thing to do, or some grand gesture that could explain what you mean to me.</p>
-      <p class="letter-text">But I don't. I only know that <strong>I will love you like no one does.</strong> Not because I have everything figured out, but because loving you is one thing my heart seems certain about.</p>
-      <button class="next" data-next="quotes">Continue <span>↓</span></button>
+
+    <section class="section letter-section" id="letter">
+      <div class="letter-layout">
+        <div class="letter-intro">
+          <p class="eyebrow">SCENE 01 · A CONFESSION</p>
+          <h2>There are things<br><em>I need you to know.</em></h2>
+          <p>This is the part where I stop trying to find the perfect words and just tell you the truth.</p>
+          <button class="text-button" id="reveal-letter">Read my letter <span>↗</span></button>
+        </div>
+        <article class="letter-paper" id="letter-paper" aria-live="polite">
+          <p class="letter-date">JUST FOR YOU</p>
+          <h3>My favorite person,</h3>
+          <div class="letter-hidden" id="letter-content">
+            <p>I wish I could put into words what you mean to me. Sometimes I have a thousand things I want to tell you, and somehow the moment I try, every sentence feels too small. So let me start with the simplest truth: having you in my life makes the world feel softer, brighter, and a little more like home.</p>
+            <p>I don't want you to think you have to be perfect with me. I want the real you: the sleepy conversations, the random stories, the laughter that catches us by surprise, the quiet moments when we don't need to say anything at all, and even the days when life feels a little heavy. I want to be someone you can be completely yourself around.</p>
+            <p>There is a moment in <em>Good Will Hunting</em> when Sean talks about his wife. What makes their love beautiful isn't that she was perfect. It's the tiny details he remembers, the funny habits, the little imperfections that made her uniquely her. It reminds me that the best kind of love isn't about finding a flawless person. It's about knowing someone deeply, noticing the little things, and choosing them with your whole heart.</p>
+            <p>That's the kind of love I want to give you. I want to learn every little thing that makes you smile. I want to celebrate your victories, hold your hand through the difficult days, listen when you need to talk, and make ordinary moments feel special just because we're sharing them. I can't promise that I'll always know exactly what to do, but I can promise that I'll keep trying, keep listening, and keep choosing you.</p>
+            <p>And if you ever wonder how much you mean to me, remember this: you don't have to do anything extraordinary to be loved by me. You being you is already more than enough. I don't know what to do with all the love I have for you sometimes. I only know that I want to spend a lifetime finding little ways to show it.</p>
+            <p class="signature">With all my heart, always yours <span>♡</span></p>
+          </div>
+          <p class="letter-hint" id="letter-hint">The rest is waiting for you…</p>
+        </article>
+      </div>
     </section>
-    <section id="quotes" class="panel quotes">
-      <p class="eyebrow">Scene 02 · Things movies almost say for me</p>
-      <div class="quote-card"><blockquote>“You complete me.”</blockquote><cite>— <i>Jerry Maguire</i></cite></div>
-      <div class="quote-card"><blockquote>“I’m in love with you.”</blockquote><cite>— <i>The Notebook</i></cite></div>
-      <div class="quote-card"><blockquote>“To me, you are perfect.”</blockquote><cite>— <i>Love Actually</i></cite></div>
-      <p class="quote-after">They say it in movies. I wish I could make you feel it in real life.</p>
-      <button class="next" data-next="promise">One more thing <span>↓</span></button>
+
+    <section class="section music-section" id="music">
+      <div class="section-heading">
+        <p class="eyebrow">A SONG FOR YOU</p>
+        <h2>Some songs become <em>memories.</em></h2>
+        <p>Two songs, two memories, and a little piece of my heart in each one.</p>
+      </div>
+      <div class="music-player">
+        <div class="player-top">
+          <div class="vinyl" aria-hidden="true">♫</div>
+          <div class="now-playing"><p class="music-kicker">OUR LITTLE SOUNDTRACK</p><h3 id="track-title">تملي معاك</h3><p id="track-artist">Amr Diab · Tamally Maak</p></div>
+          <span class="playing-indicator" id="playing-indicator">READY</span>
+        </div>
+        <div class="player-controls">
+          <button class="player-button" id="play-pause" type="button" aria-label="Play music">▶</button>
+          <div class="track-progress"><div class="progress-fill" id="progress-fill"></div></div>
+          <span class="track-time" id="track-time">0:00</span>
+          <button class="player-button small" id="next-track" type="button" aria-label="Next song">↗</button>
+        </div>
+        <p class="autoplay-note" id="autoplay-note">Your songs are ready. If your browser blocks automatic playback, tap play once and the playlist will continue on its own.</p>
+      </div>
+      <audio id="song-one" preload="auto" src="./assets/music/tamally-maak.mp3"></audio>
+      <audio id="song-two" preload="auto" src="./assets/music/cant-help-falling-in-love.mp3"></audio>
+      <p class="music-disclaimer">The playlist plays your locally stored audio files in order. Use the controls whenever you like.</p>
     </section>
-    <section id="promise" class="panel promise">
-      <p class="eyebrow">Scene 03 · My promise</p>
-      <div class="heart-wrap"><span class="heart">♥</span></div>
-      <h2>Not a perfect love.<br/><em>A real one.</em></h2>
-      <p class="letter-text">I want to be there for the ordinary days, the messy ones, the days when you don't feel like being strong, and the days we laugh at absolutely nothing.</p>
-      <p class="letter-text">I want to keep choosing you with patience, honesty, tenderness, and all the little ways love is supposed to show up.</p>
-      <button class="next" data-next="final">Read the last part <span>↓</span></button>
+
+    <section class="forever-section" id="forever">
+      <div class="forever-inner">
+        <p class="eyebrow">THE LAST SCENE? NOT EVEN CLOSE.</p>
+        <h2>I don't know what to do but…<br><em>I will love you like no one does.</em></h2>
+        <div class="heart-rule"><span>♡</span></div>
+        <p>Here's to every chapter we haven't written yet.</p>
+        <button class="heart-button" id="heart-button" aria-label="Send a heart">♡</button>
+        <p class="tiny-note">Made with all my heart.</p>
+      </div>
     </section>
-    <section id="final" class="panel final">
-      <p class="eyebrow">Final scene · Until the credits</p>
-      <h2>If I had one wish…</h2>
-      <p class="letter-text">It wouldn't be for a perfect story. It would be for more time with you, more memories, more little moments that become our favorite things without us even noticing.</p>
-      <p class="final-line">I don't know what to do,<br/>but I will love you <em>like no one does.</em></p>
-      <div class="signature">Always, with love <span>♡</span></div>
-      <button id="restart" class="quiet">Read it again ↺</button>
-    </section>
-    <footer>MADE OF WORDS, AND A LITTLE COURAGE <span>♡</span></footer>
   </main>
-  <script src="script.js"></script>
+  <footer><span>OUR STORY ♡</span><span>Just between us.</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite">A little heart, just for you ♡</div>
+<audio id="love-song" preload="auto">
+  <source src="./assets/music/cant-help-falling-in-love.mp3" type="audio/mpeg">
+</audio>
+
 </body>
 </html>
